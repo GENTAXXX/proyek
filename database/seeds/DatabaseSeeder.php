@@ -1,6 +1,5 @@
 <?php
 
-use App\lowongan;
 use App\admin;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(lowongan::class, 100)->create();
         factory(admin::class, 3)->create();
     }
 }

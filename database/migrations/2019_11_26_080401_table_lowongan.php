@@ -18,6 +18,7 @@ class TableLowongan extends Migration
             $table->string('nama_perusahaan');
             $table->text('deskripsi');
             $table->string('nama_pekerjaan');
+            $table->string('status');
             $table->timestamps();
         });
     }
