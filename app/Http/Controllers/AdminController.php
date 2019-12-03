@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\lowongan;
 
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     function index(){
-        return view('admin');
+        $data = lowongan::all();
+        return view('admin', ['lowongan' => $data]);
     }
 }

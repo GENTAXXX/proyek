@@ -15,10 +15,13 @@ class TableLowongan extends Migration
     {
         Schema::create('lowongan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_perusahaan');
-            $table->text('deskripsi');
             $table->string('nama_pekerjaan');
-            $table->string('status');
+            $table->enum('jns_pekerjaan', ['Full Time', 'Part Time', 'Freelancer']);
+            $table->text('lokasi');
+            $table->text('deskripsi');
+            $table->string('email')->unique();
+            $table->string('no_telp');
+            $table->integer('gaji');
             $table->timestamps();
         });
     }

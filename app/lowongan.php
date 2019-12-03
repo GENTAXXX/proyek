@@ -9,6 +9,6 @@ class lowongan extends Model
     //
     protected $table = 'lowongan';
     protected $fillable = [
-        'nama_perusahaan','deskripsi','nama_pekerjaan'
+        'nama_pekerjaan','jns_pekerjaan','lokasi','deskripsi','email','no_telp','gaji'
     ];
 }

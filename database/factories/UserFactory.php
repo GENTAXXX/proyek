@@ -30,9 +30,12 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->define(lowongan::class, function (Faker $faker) {
     return [
-        'nama_perusahaan' => $faker->company,
-        'deskripsi' => $faker->text,
         'nama_pekerjaan' => $faker->jobTitle,
+        'lokasi' => $faker->address,
+        'deskripsi' => $faker->text,
+        'email' => $faker->unique()->freeEmail,
+        'no_telp' => $faker->phoneNumber,
+        'gaji' => $faker->numberBetween(500000, 10000000),
     ];
 });
 

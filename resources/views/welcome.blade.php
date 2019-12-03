@@ -1,100 +1,128 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@extends('layouts.layoutama')
+@section('konten')
+<div class="container">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-12">
+            <div class="mb-5 text-center">
+                <h1 class="text-white font-weight-bold">Website Lowongan Kerja Sekolah Vokasi</h1>
+                <h1 class="text-white font-weight-bold">UNIVERSITAS GADJAH MADA</h1>
+                <p>Temukan pekerjaan yang anda cari di sini.</p>
+            </div>
+            <form method="post" class="search-jobs-form">
+                <div class="row mb-5">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <input type="text" class="form-control form-control-lg" placeholder="Nama Pekerjaan...">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <select class="form-control">
+                            <option>Dimanapun</option>
+                            <option>Yogyakarta</option>
+                            <option>Jakarta</option>
+                            <option>Bandung</option>
+                            <option>Medan</option>
+                            <option>Surabaya</option>
+                            <option>Malang</option>
+                            <option>Semarang</option>
+                            <option>Bogor</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <select class="form-control">
+                            <option>Part Time</option>
+                            <option>Full Time</option>
+                            <option>Magang</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
+                    </div>
                 </div>
-            @endif
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/gedungsv.jpg');">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-7 text-center">
+                <h2 class="section-title mb-2 text-white">Statistics</h2>
+                <p class="lead text-white"></p>
+            </div>
+        </div>
+        <div class="row pb-0 block__19738 section-counter">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <strong class="number" data-number="1930">0</strong>
                 </div>
+                <span class="caption">Pelamar</span>
+            </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <strong class="number" data-number="54">0</strong>
+                </div>
+                <span class="caption">Pekerjaan Ditawarkan</span>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <strong class="number" data-number="120">0</strong>
+                </div>
+                <span class="caption">Pekerjaan Terpenuhi</span>
+            </div>
+
+            <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <strong class="number" data-number="550">0</strong>
+                </div>
+                <span class="caption">Perusahaan</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="site-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-7 text-center">
+                <h2 class="section-title mb-2">54 Lowongan</h2>
+            </div>
+        </div>
+        @foreach($lowongan as $data)
+        <div class="mb-5">
+            <div class="row align-items-start job-item border-bottom pb-3 mb-3 pt-3">
+                <div class="col-md-2">
+                    <a href="job-single.html"><img src="images/featured-listing-1.jpg" alt="Image" class="img-fluid"></a>
+                </div>
+                <div class="col-md-4">
+                    <span class="badge badge-primary px-2 py-1 mb-3">{{ $data->jns_pekerjaan }}</span>
+                    <h2><a href="job-single.html">{{ $data->nama_pekerjaan }}</a> </h2>
+                    <p class="meta">Publisher: <strong>John Stewart</strong> In: <strong>Design</strong></p>
+                </div>
+                <div class="col-md-3 text-left">
+                    <h3>{{ $data->lokasi }}</h3>
+                    <span class="meta">Indonesia</span>
+                </div>
+                <div class="col-md-3 text-md-right">
+                    <strong class="text-black">Rp{{ $data->gaji }}</strong>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        @endforeach
+        <div class="row pagination-wrap">
+            <div class="col-md-6 text-center text-md-left">
+                <div class="custom-pagination ml-auto">
+                    <a href="#" class="prev">Previous</a>
+                    <div class="d-inline-block">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                    </div>
+                    <a href="#" class="next">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endsection
