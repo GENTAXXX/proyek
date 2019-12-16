@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2019 at 06:01 AM
+-- Generation Time: Dec 16, 2019 at 04:11 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -71,6 +71,7 @@ CREATE TABLE `lowongan` (
   `no_telp` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gaji` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batas` date NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -79,8 +80,8 @@ CREATE TABLE `lowongan` (
 -- Dumping data for table `lowongan`
 --
 
-INSERT INTO `lowongan` (`id`, `nama_pekerjaan`, `jns_pekerjaan`, `lokasi`, `deskripsi`, `kriteria`, `syarat`, `email`, `no_telp`, `gaji`, `batas`, `created_at`, `updated_at`) VALUES
-(1, 'Dosen', 'Full Time', 'Jakarta', 'Dosen Matkul PAI', 'Cowo\r\nSholeh\r\nS1', 'KTP\r\nIjazah', 'ugm@mail.com', '0821048912', '2.000.000.000', '2019-12-25', '2019-12-14 04:02:19', '2019-12-14 04:02:19');
+INSERT INTO `lowongan` (`id`, `nama_pekerjaan`, `jns_pekerjaan`, `lokasi`, `deskripsi`, `kriteria`, `syarat`, `email`, `no_telp`, `gaji`, `batas`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Designer', 'Full Time', 'Sleman', 'Sdasfakjb', 'aslfafb', 'kjabgkebg', 'ramadhan@mail.com', '08214871985', '2.000.000', '2019-12-19', '1576507807.jpeg', '2019-12-16 07:50:07', '2019-12-16 07:50:07');
 
 -- --------------------------------------------------------
 
@@ -102,11 +103,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2019_11_23_130752_table_lowongan', 1),
 (22, '2019_11_25_095712_table_admin', 2),
 (24, '2019_12_12_095712_table_admin', 3),
-(36, '2014_10_12_000000_create_users_table', 4),
-(37, '2014_10_12_100000_create_password_resets_table', 4),
-(38, '2019_08_19_000000_create_failed_jobs_table', 4),
-(39, '2019_11_26_080401_table_lowongan', 4),
-(40, '2019_12_12_170612_table_admin', 4);
+(60, '2014_10_12_000000_create_users_table', 4),
+(61, '2014_10_12_100000_create_password_resets_table', 4),
+(62, '2019_08_19_000000_create_failed_jobs_table', 4),
+(63, '2019_11_26_080401_table_lowongan', 4),
+(64, '2019_12_12_170612_table_admin', 4),
+(65, '2019_12_15_095059_table_profile', 4);
 
 -- --------------------------------------------------------
 
@@ -118,6 +120,23 @@ CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile`
+--
+
+CREATE TABLE `profile` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_users` int(11) NOT NULL,
+  `nama_perusahaan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_telp` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -142,7 +161,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'rudi', 'rudi@mail.com', NULL, '$2y$10$8ii.lnr.DjtRYB66Vvj3mOuQD4NhJWIf7wgH.PGAAhvtnDslZSLGK', NULL, '2019-12-14 04:00:35', '2019-12-14 04:00:35');
+(1, 'Ramadhan', 'ramadhan@mail.com', NULL, '$2y$10$FysvPtjz631MKrH6OoMAx.23lSVYgaO.Vt151uGb95Fs.Qkr26v7a', NULL, '2019-12-16 07:48:17', '2019-12-16 07:48:17');
 
 --
 -- Indexes for dumped tables
@@ -181,6 +200,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `profile`
+--
+ALTER TABLE `profile`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -213,7 +238,13 @@ ALTER TABLE `lowongan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- AUTO_INCREMENT for table `profile`
+--
+ALTER TABLE `profile`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
