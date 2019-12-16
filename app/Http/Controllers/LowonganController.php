@@ -13,9 +13,11 @@ class LowonganController extends Controller
     }
 
     public function add(Request $request){
+        $imageName2 = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img'), $imageName2);
         lowongan::updateOrCreate(
             ['id' => $request->id],
-            ['nama_pekerjaan' => $request->nama_pekerjaan, 'jns_pekerjaan' => $request->jns_pekerjaan, 'lokasi' => $request->lokasi, 'deskripsi' => $request->deskripsi, 'email' => $request->email, 'no_telp' => $request->no_telp, 'gaji' => $request->gaji]
+            ['nama_pekerjaan' => $request->nama_pekerjaan, 'jns_pekerjaan' => $request->jns_pekerjaan, 'lokasi' => $request->lokasi, 'deskripsi' => $request->deskripsi, 'kriteria' => $request->kriteria, 'syarat' => $request->syarat, 'email' => $request->email, 'no_telp' => $request->no_telp, 'gaji' => $request->gaji, 'batas' => $request->batas, 'image' => $imageName2]
         );
         return redirect('/home')->with('success', 'Lowongan berhasil disimpan!');
     }
@@ -36,9 +38,12 @@ class LowonganController extends Controller
             'jns_pekerjaan' => $request->jns_pekerjaan,
             'lokasi' => $request->lokasi,
             'deskripsi' => $request->deskripsi,
+            'kriteria' => $request->kriteria,
+            'syarat' => $request->syarat,
             'email' => $request->email,
             'no_telp' => $request->no_telp,
-            'gaji' => $request->gaji
+            'gaji' => $request->gaji,
+            'batas' => $request->batas
         ]);
         return redirect('/list');
     }

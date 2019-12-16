@@ -19,9 +19,13 @@ class TableLowongan extends Migration
             $table->enum('jns_pekerjaan', ['Full Time', 'Part Time', 'Freelancer']);
             $table->text('lokasi');
             $table->text('deskripsi');
+            $table->text('kriteria');
+            $table->text('syarat');
             $table->string('email')->unique();
             $table->string('no_telp');
-            $table->integer('gaji');
+            $table->string('gaji');
+            $table->date('batas');
+            $table->string('image');
             $table->timestamps();
         });
     }

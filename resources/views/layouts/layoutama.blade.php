@@ -73,79 +73,79 @@
         </header>
 
         <!-- HOME -->
-        <section class="home-section section-hero overlay bg-image" style="background-image: url('images/gedungsv.jpg');" id="home-section">
-            @yield('konten')
+        <section class="home-section section-hero overlay bg-image" style="background-image: url({{ url('images/gedungsv.jpg') }});" id="home-section">
+        @yield('konten')
         </section>
-        <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/gedungsv.jpg');">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <h2 class="text-white">Looking For A Job?</h2>
-                        <p class="mb-0 text-white lead">Segera bergabung dengan kami.
-                        </p>
-                    </div>
-                    <div class="col-md-3 ml-auto">
-                        <a href="{{ url('/login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Search Trending</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Graphic Design</a></li>
-                            <li><a href="#">Web Developers</a></li>
-                            <li><a href="#">Python</a></li>
-                            <li><a href="#">HTML5</a></li>
-                            <li><a href="#">CSS3</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Company</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Support</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Contact Us</h3>
-                        <div class="footer-social">
-                            <a href="#"><span class="icon-facebook"></span></a>
-                            <a href="#"><span class="icon-twitter"></span></a>
-                            <a href="#"><span class="icon-instagram"></span></a>
-                            <a href="#"><span class="icon-linkedin"></span></a>
+            <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/gedungsv.jpg');">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="text-white">Looking For A Job?</h2>
+                            <p class="mb-0 text-white lead">Segera bergabung dengan kami.
+                            </p>
+                        </div>
+                        <div class="col-md-3 ml-auto">
+                            <a href="{{ url('/login') }}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
                         </div>
                     </div>
                 </div>
+            </section>
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <h3>Search Trending</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Graphic Design</a></li>
+                                <li><a href="#">Web Developers</a></li>
+                                <li><a href="#">Python</a></li>
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">CSS3</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <h3>Company</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Career</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Resources</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <h3>Support</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3 mb-4 mb-md-0">
+                            <h3>Contact Us</h3>
+                            <div class="footer-social">
+                                <a href="#"><span class="icon-facebook"></span></a>
+                                <a href="#"><span class="icon-twitter"></span></a>
+                                <a href="#"><span class="icon-instagram"></span></a>
+                                <a href="#"><span class="icon-linkedin"></span></a>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="row text-center">
-                    <div class="col-12">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
     </div>
 
     <!-- SCRIPTS -->

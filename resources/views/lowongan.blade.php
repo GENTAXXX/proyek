@@ -15,7 +15,7 @@
     <div class="container mt-2">
         <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
-                <form method="POST" action="{{ route('lowonganAdd') }}" class="p-5 bg-white">
+                <form method="POST" action="{{ route('lowonganAdd') }}" class="p-5 bg-white" enctype="multipart/form-data">
                     @csrf
                     <div class="row form-group">
                         <div class="col-md-12 mb-3 mb-md-0">
@@ -59,6 +59,22 @@
                         </div>
                     </div>
                     <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" for="fullname">Kriteria</label>
+                        </div>
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <textarea class="form-control" name="kriteria" id="" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label class="font-weight-bold" for="fullname">Syarat</label>
+                        </div>
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <textarea class="form-control" name="syarat" id="" cols="30" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
                         <div class="col-md-12 mb-md-0">
                             <label class="font-weight-bold" for="fullname">Email</label>
                             <input type="text" id="fullname" class="form-control" name="email" placeholder="eg. company@mail.com">
@@ -76,9 +92,21 @@
                             <input type="text" id="fullname" class="form-control" name="gaji" placeholder="eg. Rp2.0000.000 - Rp3.000.000">
                         </div>
                     </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-md-2">
+                            <label class="font-weight-bold" for="fullname">Batas Lamaran</label>
+                            <input type="date" id="fullname" class="form-control" name="batas">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12 mb-3 mb-md-0">
+                            <label class="text-black" for="fname">Foto Lowongan</label></br>
+                            <input type="file" name="image">
+                        </div>
+                    </div>
                     <div class="row form-group mt-4">
                         <div class="col-md-12">
-                            <input type="submit" value="Post" class="btn btn-primary  py-2 px-5">
+                            <input type="submit" value="Post" class="btn btn-primary py-2 px-5">
                         </div>
                     </div>
                 </form>
